@@ -1,0 +1,94 @@
+/* FishboneDiagram.css */
+
+.fishbone-diagram {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .category {
+    margin-bottom: 20px;
+  }
+  
+  .category h3 {
+    margin-bottom: 10px;
+  }
+  
+  .category ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 12%;
+    margin: 8%;
+  }
+  
+  .category li {
+    cursor: pointer;
+    margin-bottom: 5px;
+    color: #007bff;
+    border-left: 1px solid #ccc;
+    padding-left: 5px; 
+    transform: rotate(-60deg); 
+    transform-origin: left top;
+    
+  }
+  .category hr {
+    background: cadetblue;
+    transform: rotate(-60deg);
+    width: 20%;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .category hr {
+        margin: 20px 0; 
+        margin-top: 20px
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .category li {
+        margin-top: 20px
+    }
+  }
+  
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .popup h3 {
+    margin-top: 0;
+  }
+  
+  .popup p {
+    margin-bottom: 10px;
+  }
+  
+  .popup button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .popup button:hover {
+    background-color: #0056b3;
+  }
+  
