@@ -7,23 +7,22 @@ const FishboneDiagram = () => {
   const [selectedItem, setSelectedItem] = useState(null);
 
   const onItemClick = (item) => {
-    debugger;
-    if(item == 'Item 1'){
+    if(item === 'Item 1'){
         setSelectedItem("strongly agree");
         setPopupVisible(true);
-    } else if(item == 'Item 2'){
+    } else if(item === 'Item 2'){
         setSelectedItem("agree");
         setPopupVisible(true);
     }
-    else if(item == 'Item 3'){
+    else if(item === 'Item 3'){
         setSelectedItem("disagree");
         setPopupVisible(true);
     }
-    else if(item == 'Item 4'){
+    else if(item === 'Item 4'){
         setSelectedItem("strongly disAgree");
         setPopupVisible(true);
     }
-    else if(item == 'Item 5'){
+    else if(item === 'Item 5'){
         setSelectedItem("ok agree");
         setPopupVisible(true);
     }
@@ -43,9 +42,9 @@ const FishboneDiagram = () => {
     <div className="fishbone-diagram">
       <h2>Fishbone Diagram</h2>
       <div className="categories">
-        <Category  items={['Item 1', 'Item 2', 'Item 3']} onItemClick={onItemClick} />
-        <hr className='category ' />
-        <Category  items={['Item 4', 'Item 5', 'Item 6']} onItemClick={onItemClick} />
+        <Category id={1} items={['Item 1', 'Item 2', 'Item 3']} onItemClick={onItemClick} />
+        <hr className='category-main-hr' />
+        <Category id={2} items={['Item 4', 'Item 5', 'Item 6']} onItemClick={onItemClick} />
       </div>
 
       {popupVisible && (
@@ -61,13 +60,13 @@ const FishboneDiagram = () => {
   );
 };
 
-const Category = ({ items, onItemClick }) => {
+const Category = ({ items, onItemClick,id }) => {
   return (
     <div className="category">
       <ul>
         {items.map((item, index) => (<>
-          <li key={index} > {item} </li>
-          <hr onClick={() => onItemClick(item)} />
+        {id === 1 ? <> <li className='category-top' key={index} > {item} </li> <hr className='category-hr-top' onClick={() => onItemClick(item)} /> </>
+          :<> <li className='category-bottom' key={index} > {item} </li>  <hr className='category-hr-bottom' onClick={() => onItemClick(item)} /></>}
           </>
         ))}
       </ul>
